@@ -158,12 +158,12 @@ void add_data()
             cout << "Enter Product Price: ";
             cin >> product_storage[total_products].price;
             system("clear");
-            cout << "Product Added!" << endl;
-            cout << "====================================" << endl;
-            cout << "\tProduct ID: " << product_storage[total_products].id << endl;
-            cout << "\tProduct Name: " << product_storage[total_products].name << endl;
+            cout << "Product Added!"                                             << endl;
+            cout << "===================================="                       << endl;
+            cout << "\tProduct ID: " << product_storage[total_products].id       << endl;
+            cout << "\tProduct Name: " << product_storage[total_products].name   << endl;
             cout << "\tProduct Price: " << product_storage[total_products].price << endl;
-            cout << "====================================" << endl;
+            cout << "===================================="                       << endl;
             total_products++;
         }
         else if (ch == 'b')
@@ -189,7 +189,7 @@ void update_data()
         }
         else if (ch == 'b')
         {
-            cout << "User Updated" << endl;
+            cout << "User Updated"    << endl;
         }
         else if (ch == 'c')
         {
@@ -210,7 +210,7 @@ void delete_data()
         }
         else if (ch == 'b')
         {
-            cout << "User Deleted" << endl;
+            cout << "User Deleted"    << endl;
         }
         else if (ch == 'c')
         {
