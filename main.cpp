@@ -151,8 +151,8 @@ void add_data()
         char ch = get_choice_char('a', 'c', add_data_options);
         if (ch == 'a')
         {
-            cout << "Enter Product ID: ";
-            cin >> product_storage[total_products].id;
+            cout << "Product ID: " << total_products << endl;
+            product_storage[total_products].id = total_products;
             cout << "Enter Product Name: ";
             cin >> product_storage[total_products].name;
             cout << "Enter Product Price: ";
