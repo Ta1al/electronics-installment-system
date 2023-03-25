@@ -9,9 +9,21 @@ struct product
     char name[20];
     int price;
 };
+struct purchase
+{
+    int id;
+    int product_id;
+    string customer_name;
+    int initial_price;
+    int final_price;
+    int installment_per_month;
+    int months;
+};
 
 product product_storage[100];
+purchase purchase_storage[100];
 int total_products = 0;
+int total_purchases = 0;
 
 int get_choice(int min, int max, function<void()> func)
 {
