@@ -87,10 +87,10 @@ void menu()
     cout << "==============================" << endl;
     cout << "*         Main Menu          *" << endl;
     cout << "==============================" << endl;
-    cout << "\t1) Manage Data"                 << endl;
-    cout << "\t2) Search"                      << endl;
-    cout << "\t3) Reports"                     << endl;
-    cout << "\t4) Exit"                        << endl;
+    cout << "\t1) Manage Data"               << endl;
+    cout << "\t2) Search"                    << endl;
+    cout << "\t3) Reports"                   << endl;
+    cout << "\t4) Exit"                      << endl;
 }
 
 // Main Menu Sub Options
@@ -150,8 +150,23 @@ void display_data_options()
     cout << "*        Display Menu        *" << endl;
     cout << "==============================" << endl;
     cout << "\ta) Display Products"          << endl;
-    cout << "\tb) Display Purchases"      << endl;
+    cout << "\tb) Display Purchases"         << endl;
     cout << "\tc) Go back"                   << endl;
+}
+void display_product(int i)
+{
+    cout << "\tProduct ID: " << product_storage[i].id << endl;
+    cout << "\tProduct Name: " << product_storage[i].name << endl;
+    cout << "\tProduct Price: " << product_storage[i].price << endl;
+}
+void display_purchase(int i)
+{
+    cout << "\tPurchase ID: " << purchase_storage[i].id << endl;
+    cout << "\tProduct ID: " << purchase_storage[i].product_id << endl;
+    cout << "\tCustomer Name: " << purchase_storage[i].customer_name << endl;
+    cout << "\tInitial Price: " << purchase_storage[i].initial_price << endl;
+    cout << "\tFinal Price: " << purchase_storage[i].final_price << endl;
+    cout << "\tFinal Price: " << purchase_storage[i].final_price << endl;
 }
 
 // Manage Menu
@@ -201,7 +216,7 @@ void update_data()
         }
         else if (ch == 'b')
         {
-            cout << "User Updated"    << endl;
+            cout << "User Updated" << endl;
         }
         else if (ch == 'c')
         {
@@ -222,7 +237,7 @@ void delete_data()
         }
         else if (ch == 'b')
         {
-            cout << "User Deleted"    << endl;
+            cout << "User Deleted" << endl;
         }
         else if (ch == 'c')
         {
@@ -239,18 +254,21 @@ void display_data()
         char ch = get_choice_char('a', 'c', display_data_options);
         if (ch == 'a')
         {
-            cout << "===================================="              << endl;
+            cout << "====================================" << endl;
             for (int i = 0; i < total_products; i++)
             {
-                cout << "\tProduct ID: " << product_storage[i].id       << endl;
-                cout << "\tProduct Name: " << product_storage[i].name   << endl;
-                cout << "\tProduct Price: " << product_storage[i].price << endl;
-                cout << "===================================="          << endl;
+                display_product(i);
+                cout << "====================================" << endl;
             }
         }
         else if (ch == 'b')
         {
-            cout << "Users" << endl;
+            cout << "====================================" << endl;
+            for (int i = 0; i < total_purchases; i++)
+            {
+                display_purchase(i);
+                cout << "====================================" << endl;
+            }
         }
         else if (ch == 'c')
         {
