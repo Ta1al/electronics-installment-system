@@ -56,90 +56,90 @@ char get_choice_char(char min, char max, function<void()> func)
 
 void welcome()
 {
-    cout << "**************************************" << endl;
-    cout << "*           Welcome to the           *" << endl;
-    cout << "*   Electronics Installment System   *" << endl;
-    cout << "**************************************" << endl;
+    cout << "********************************************" << endl;
+    cout << "*              Welcome to the              *" << endl;
+    cout << "*   Afzal Electronics Installment System   *" << endl;
+    cout << "********************************************" << endl;
 }
 void goodbye()
 {
-    cout << "**************************************" << endl;
-    cout << "*         Thank you for using        *" << endl;
-    cout << "*   Electronics Installment System   *" << endl;
-    cout << "*               Goodbye!             *" << endl;
-    cout << "**************************************" << endl;
+    cout << "********************************************" << endl;
+    cout << "*            Thank you for using           *" << endl;
+    cout << "*   Afzal Electronics Installment System   *" << endl;
+    cout << "*                 Goodbye!                 *" << endl;
+    cout << "********************************************" << endl;
 }
 
 void menu()
 {
-    cout << "******************************" << endl;
+    cout << "==============================" << endl;
     cout << "*         Main Menu          *" << endl;
-    cout << "******************************" << endl;
-    cout << "1) Manage Data"                 << endl;
-    cout << "2) Search"                      << endl;
-    cout << "3) Reports"                     << endl;
-    cout << "4) Exit"                        << endl;
+    cout << "==============================" << endl;
+    cout << "\t1) Manage Data"                 << endl;
+    cout << "\t2) Search"                      << endl;
+    cout << "\t3) Reports"                     << endl;
+    cout << "\t4) Exit"                        << endl;
 }
 
 // Main Menu Sub Options
 void manage_data_options()
 {
-    cout << "******************************" << endl;
+    cout << "==============================" << endl;
     cout << "*        Manage Menu         *" << endl;
-    cout << "******************************" << endl;
-    cout << "a) Add data"                    << endl;
-    cout << "b) Update data"                 << endl;
-    cout << "c) Delete data"                 << endl;
-    cout << "d) Display"                     << endl;
-    cout << "e) Go back"                     << endl;
+    cout << "==============================" << endl;
+    cout << "\ta) Add data"                  << endl;
+    cout << "\tb) Update data"               << endl;
+    cout << "\tc) Delete data"               << endl;
+    cout << "\td) Display"                   << endl;
+    cout << "\te) Go back"                   << endl;
 }
 void search_data_options()
 {
-    cout << "******************************" << endl;
+    cout << "==============================" << endl;
     cout << "*        Search Menu         *" << endl;
-    cout << "******************************" << endl;
-    cout << "a) Search by Product ID"        << endl;
-    cout << "b) Search by Product Name"      << endl;
-    cout << "c) Search by Customer Name"     << endl;
-    cout << "d) Go Back"                     << endl;
+    cout << "==============================" << endl;
+    cout << "\ta) Search by Product ID"      << endl;
+    cout << "\tb) Search by Product Name"    << endl;
+    cout << "\tc) Search by Customer Name"   << endl;
+    cout << "\td) Go Back"                   << endl;
 }
 
 // Manage Menu Options
 void add_data_options()
 {
-    cout << "******************************" << endl;
+    cout << "==============================" << endl;
     cout << "*        Add Menu            *" << endl;
-    cout << "******************************" << endl;
-    cout << "a) Add Product"                 << endl;
-    cout << "b) Add Customer"                << endl;
-    cout << "c) Go back"                     << endl;
+    cout << "==============================" << endl;
+    cout << "\ta) Add Product"               << endl;
+    cout << "\tb) Add Customer"              << endl;
+    cout << "\tc) Go back"                   << endl;
 }
 void update_data_options()
 {
-    cout << "******************************" << endl;
+    cout << "==============================" << endl;
     cout << "*        Update Menu         *" << endl;
-    cout << "******************************" << endl;
-    cout << "a) Update Product"              << endl;
-    cout << "b) Update Customer"             << endl;
-    cout << "c) Go back"                     << endl;
+    cout << "==============================" << endl;
+    cout << "\ta) Update Product"            << endl;
+    cout << "\tb) Update Customer"           << endl;
+    cout << "\tc) Go back"                   << endl;
 }
 void delete_data_options()
 {
-    cout << "******************************" << endl;
+    cout << "==============================" << endl;
     cout << "*        Delete Menu         *" << endl;
-    cout << "******************************" << endl;
-    cout << "a) Delete Product"              << endl;
-    cout << "b) Delete Customer"             << endl;
-    cout << "c) Go back"                     << endl;
+    cout << "==============================" << endl;
+    cout << "\ta) Delete Product"            << endl;
+    cout << "\tb) Delete Customer"           << endl;
+    cout << "\tc) Go back"                   << endl;
 }
 void display_data_options()
 {
-    cout << "******************************" << endl;
+    cout << "==============================" << endl;
     cout << "*        Display Menu        *" << endl;
-    cout << "******************************" << endl;
-    cout << "a) Display Products"            << endl;
-    cout << "b) Display Installments"        << endl;
-    cout << "c) Go back"                     << endl;
+    cout << "==============================" << endl;
+    cout << "\ta) Display Products"          << endl;
+    cout << "\tb) Display Installments"      << endl;
+    cout << "\tc) Go back"                   << endl;
 }
 
 // Manage Menu
