@@ -172,6 +172,22 @@ void display_data_options()
     cout << "\tc) Go back"                   << endl;
 }
 
+void add_product()
+{
+    cout << "Product ID: " << total_products << endl;
+    product_storage[total_products].id = total_products;
+    cout << "Enter Product Name: ";
+    cin >> product_storage[total_products].name;
+    cout << "Enter Product Price: ";
+    cin >> product_storage[total_products].price;
+    system("clear");
+    cout << "Product Added!" << endl;
+    cout << "====================================" << endl;
+    display_product(total_products);
+    cout << "====================================" << endl;
+    total_products++;
+}
+
 // Manage Menu
 void add_data()
 {
@@ -180,22 +196,7 @@ void add_data()
         add_data_options();
         char ch = get_choice_char('a', 'c', add_data_options);
         if (ch == 'a')
-        {
-            cout << "Product ID: " << total_products << endl;
-            product_storage[total_products].id = total_products;
-            cout << "Enter Product Name: ";
-            cin >> product_storage[total_products].name;
-            cout << "Enter Product Price: ";
-            cin >> product_storage[total_products].price;
-            system("clear");
-            cout << "Product Added!"                                             << endl;
-            cout << "===================================="                       << endl;
-            cout << "\tProduct ID: "    << product_storage[total_products].id    << endl;
-            cout << "\tProduct Name: "  << product_storage[total_products].name  << endl;
-            cout << "\tProduct Price: " << product_storage[total_products].price << endl;
-            cout << "===================================="                       << endl;
-            total_products++;
-        }
+            add_product();
         else if (ch == 'b')
         {
             cout << "User Added" << endl;
