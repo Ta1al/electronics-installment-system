@@ -40,12 +40,13 @@ void display_product(int i)
 }
 void display_purchase(int i)
 {
-    cout << "\tPurchase ID: "   << purchase_storage[i].id              << endl;
-    cout << "\tProduct ID: "    << purchase_storage[i].product_id      << endl;
-    cout << "\tCustomer Name: " << purchase_storage[i].customer_name   << endl;
-    cout << "\tInitial Price: " << purchase_storage[i].initial_price   << endl;
-    cout << "\tFinal Price: "   << purchase_storage[i].final_price     << endl;
-    cout << "\tFinal Price: "   << purchase_storage[i].final_price     << endl;
+    cout << "\tPurchase ID: "   << purchase_storage[i].id                        << endl;
+    cout << "\tProduct ID: "    << purchase_storage[i].product_id                << endl;
+    cout << "\tCustomer Name: " << purchase_storage[i].customer_name             << endl;
+    cout << "\tInitial Price: " << purchase_storage[i].initial_price             << endl;
+    cout << "\tFinal Price: "   << purchase_storage[i].final_price               << endl;
+    cout << "\tIntallment: "    << purchase_storage[i].installment_per_month     << endl;
+    cout << "\tMonths: "        << purchase_storage[i].months                    << endl;
 }
 
 // Get Choice Functions
