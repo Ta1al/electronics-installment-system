@@ -123,7 +123,7 @@ void add_data_options()
     cout << "*        Add Menu            *" << endl;
     cout << "==============================" << endl;
     cout << "\ta) Add Product"               << endl;
-    cout << "\tb) Add Customer"              << endl;
+    cout << "\tb) Add Purchase"              << endl;
     cout << "\tc) Go back"                   << endl;
 }
 void update_data_options()
@@ -132,7 +132,7 @@ void update_data_options()
     cout << "*        Update Menu         *" << endl;
     cout << "==============================" << endl;
     cout << "\ta) Update Product"            << endl;
-    cout << "\tb) Update Customer"           << endl;
+    cout << "\tb) Update Purchase"           << endl;
     cout << "\tc) Go back"                   << endl;
 }
 void delete_data_options()
@@ -141,7 +141,7 @@ void delete_data_options()
     cout << "*        Delete Menu         *" << endl;
     cout << "==============================" << endl;
     cout << "\ta) Delete Product"            << endl;
-    cout << "\tb) Delete Customer"           << endl;
+    cout << "\tb) Delete Purchase"           << endl;
     cout << "\tc) Go back"                   << endl;
 }
 void display_data_options()
@@ -150,7 +150,7 @@ void display_data_options()
     cout << "*        Display Menu        *" << endl;
     cout << "==============================" << endl;
     cout << "\ta) Display Products"          << endl;
-    cout << "\tb) Display Installments"      << endl;
+    cout << "\tb) Display Purchases"      << endl;
     cout << "\tc) Go back"                   << endl;
 }
 
@@ -172,8 +172,8 @@ void add_data()
             system("clear");
             cout << "Product Added!"                                             << endl;
             cout << "===================================="                       << endl;
-            cout << "\tProduct ID: " << product_storage[total_products].id       << endl;
-            cout << "\tProduct Name: " << product_storage[total_products].name   << endl;
+            cout << "\tProduct ID: "    << product_storage[total_products].id    << endl;
+            cout << "\tProduct Name: "  << product_storage[total_products].name  << endl;
             cout << "\tProduct Price: " << product_storage[total_products].price << endl;
             cout << "===================================="                       << endl;
             total_products++;
