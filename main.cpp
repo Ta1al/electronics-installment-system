@@ -42,6 +42,7 @@ void display_purchase(int i)
     cout << "\tFinal Price: "   << purchase_storage[i].final_price     << endl;
 }
 
+// Get Choice Functions
 int get_choice(int min, int max, function<void()> func)
 {
     int a;
