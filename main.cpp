@@ -25,6 +25,23 @@ purchase purchase_storage[100];
 int total_products = 0;
 int total_purchases = 0;
 
+// Display Functions
+void display_product(int i)
+{
+    cout << "\tProduct ID: "    << product_storage[i].id    << endl;
+    cout << "\tProduct Name: "  << product_storage[i].name  << endl;
+    cout << "\tProduct Price: " << product_storage[i].price << endl;
+}
+void display_purchase(int i)
+{
+    cout << "\tPurchase ID: "   << purchase_storage[i].id              << endl;
+    cout << "\tProduct ID: "    << purchase_storage[i].product_id      << endl;
+    cout << "\tCustomer Name: " << purchase_storage[i].customer_name   << endl;
+    cout << "\tInitial Price: " << purchase_storage[i].initial_price   << endl;
+    cout << "\tFinal Price: "   << purchase_storage[i].final_price     << endl;
+    cout << "\tFinal Price: "   << purchase_storage[i].final_price     << endl;
+}
+
 int get_choice(int min, int max, function<void()> func)
 {
     int a;
@@ -152,21 +169,6 @@ void display_data_options()
     cout << "\ta) Display Products"          << endl;
     cout << "\tb) Display Purchases"         << endl;
     cout << "\tc) Go back"                   << endl;
-}
-void display_product(int i)
-{
-    cout << "\tProduct ID: "    << product_storage[i].id    << endl;
-    cout << "\tProduct Name: "  << product_storage[i].name  << endl;
-    cout << "\tProduct Price: " << product_storage[i].price << endl;
-}
-void display_purchase(int i)
-{
-    cout << "\tPurchase ID: "   << purchase_storage[i].id              << endl;
-    cout << "\tProduct ID: "    << purchase_storage[i].product_id      << endl;
-    cout << "\tCustomer Name: " << purchase_storage[i].customer_name   << endl;
-    cout << "\tInitial Price: " << purchase_storage[i].initial_price   << endl;
-    cout << "\tFinal Price: "   << purchase_storage[i].final_price     << endl;
-    cout << "\tFinal Price: "   << purchase_storage[i].final_price     << endl;
 }
 
 // Manage Menu
