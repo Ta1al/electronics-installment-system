@@ -20,9 +20,15 @@ struct purchase
     int months;
 };
 
-product product_storage[100];
+product product_storage[100] = {
+    {0, "Laptop", 100000},
+    {1, "Mobile", 50000},
+    {2, "TV", 200000},
+    {3, "Refrigerator", 100000},
+    {4, "Washing Machine", 50000}
+};
 purchase purchase_storage[100];
-int total_products = 0;
+int total_products = 5;
 int total_purchases = 0;
 
 // Display Functions
