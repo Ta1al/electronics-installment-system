@@ -23,8 +23,8 @@ struct purchase
 product product_storage[100] = {
     {0, "Laptop", 100000},
     {1, "Mobile", 50000},
-    {2, "TV", 200000},
-    {3, "Refrigerator", 100000},
+    {2, "TV", 70000},
+    {3, "Refrigerator", 50000},
     {4, "Washing Machine", 50000}
 };
 purchase purchase_storage[100];
