@@ -290,6 +290,48 @@ void delete_product()
         }
     }
 }
+void delete_purchase()
+{
+    if (total_purchases == 0)
+    {
+        cout << "No Purchases Available!" << endl;
+        return;
+    }
+    else
+    {
+        while (true)
+        {
+            list_all_purchases();
+            cout << "Enter Purchase ID: ";
+            int id;
+            cin >> id;
+            if (id >= total_purchases || id < 0)
+            {
+                system("clear");
+                cout << "Invalid ID!" << endl;
+                cout << "Try Again!" << endl;
+            }
+            else
+            {
+                string temp = purchase_storage[id].customer_name;
+                for (int i = id; i < total_purchases; i++)
+                {
+                    purchase_storage[i].id = i;
+                    purchase_storage[i].customer_name = purchase_storage[i + 1].customer_name;
+                    purchase_storage[i].product_id = purchase_storage[i + 1].product_id;
+                    purchase_storage[i].months = purchase_storage[i + 1].months;
+                    purchase_storage[i].initial_price = purchase_storage[i + 1].initial_price;
+                    purchase_storage[i].final_price = purchase_storage[i + 1].final_price;
+                    purchase_storage[i].installment_per_month = purchase_storage[i + 1].installment_per_month;
+                }
+                total_purchases--;
+                system("clear");
+                cout << temp << " Deleted!" << endl;
+                break;
+            }
+        }
+    }
+}
 
 void update_product()
 {
@@ -429,7 +471,7 @@ void delete_data()
         }
         else if (ch == 'b')
         {
-            cout << "User Deleted" << endl;
+            delete_purchase();
         }
         else if (ch == 'c')
         {
