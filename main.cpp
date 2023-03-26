@@ -194,6 +194,48 @@ void add_product()
     cout << "====================================" << endl;
     total_products++;
 }
+void add_purchase()
+{
+    cout << "Purchase ID: " << total_purchases << endl;
+    purchase_storage[total_purchases].id = total_purchases;
+    cout << "Enter Customer Name: ";
+    cin >> purchase_storage[total_purchases].customer_name;
+
+    if (total_products == 0)
+    {
+        cout << "No Products Available!" << endl;
+        return;
+    }
+    else
+        for (int i = 0; i < total_products; i++)
+        {
+            cout << i << ") " << product_storage[i].name
+                << " | Price: " << product_storage[i].price
+                << endl;
+        }
+    cout << "Enter Product ID: ";
+    cin >> purchase_storage[total_purchases].product_id;
+    product prod = product_storage[purchase_storage[total_purchases].product_id];
+    cout << "You are purchasing " << prod.name << endl;
+    cout << "Initial Price: " << prod.price << endl;
+    cout << "Enter installment months: ";
+    cin >> purchase_storage[total_purchases].months;
+    purchase purch = purchase_storage[total_purchases];
+    cout << purch.months << endl;
+    float initial_pm = prod.price / purch.months;
+    float markup = initial_pm * 0.2;
+    float final_pm = initial_pm + markup;
+    purchase_storage[total_purchases].installment_per_month = final_pm;
+    purchase_storage[total_purchases].final_price = final_pm * purch.months;
+    purchase_storage[total_purchases].initial_price = prod.price;
+
+    system("clear");
+    cout << "Purchase Added!" << endl;
+    cout << "====================================" << endl;
+    display_purchase(total_purchases);
+    cout << "====================================" << endl;
+    total_purchases++;
+}
 
 // Manage Menu
 void add_data()
@@ -205,9 +247,7 @@ void add_data()
         if (ch == 'a')
             add_product();
         else if (ch == 'b')
-        {
-            cout << "User Added" << endl;
-        }
+            add_purchase();
         else if (ch == 'c')
         {
             system("clear");
