@@ -40,13 +40,13 @@ void display_product(int i)
 }
 void display_purchase(int i)
 {
-    cout << "\tPurchase ID: "   << purchase_storage[i].id                        << endl;
-    cout << "\tProduct ID: "    << purchase_storage[i].product_id                << endl;
-    cout << "\tCustomer Name: " << purchase_storage[i].customer_name             << endl;
-    cout << "\tInitial Price: " << purchase_storage[i].initial_price             << endl;
-    cout << "\tFinal Price: "   << purchase_storage[i].final_price               << endl;
-    cout << "\tIntallment: "    << purchase_storage[i].installment_per_month     << endl;
-    cout << "\tMonths: "        << purchase_storage[i].months                    << endl;
+    cout << "\tPurchase ID: "   << purchase_storage[i].id                           << endl;
+    cout << "\tProduct ID: "    << purchase_storage[i].product_id                   << endl;
+    cout << "\tCustomer Name: " << purchase_storage[i].customer_name                << endl;
+    cout << "\tInitial Price: " << purchase_storage[i].initial_price                << endl;
+    cout << "\tFinal Price: "   << purchase_storage[i].final_price                  << endl;
+    cout << "\tIntallment per month: " << purchase_storage[i].installment_per_month << endl;
+    cout << "\tMonths: "        << purchase_storage[i].months                       << endl;
 }
 
 // Get Choice Functions
@@ -265,20 +265,36 @@ void display_data()
         char ch = get_choice_char('a', 'c', display_data_options);
         if (ch == 'a')
         {
-            cout << "====================================" << endl;
-            for (int i = 0; i < total_products; i++)
+            if (total_products == 0)
             {
-                display_product(i);
+                cout << "No Products Available!" << endl;
+                return;
+            }
+            else
+            {
                 cout << "====================================" << endl;
+                for (int i = 0; i < total_products; i++)
+                {
+                    display_product(i);
+                    cout << "====================================" << endl;
+                }
             }
         }
         else if (ch == 'b')
         {
-            cout << "====================================" << endl;
-            for (int i = 0; i < total_purchases; i++)
+            if (total_purchases == 0)
             {
-                display_purchase(i);
+                cout << "No Purchases Available!" << endl;
+                return;
+            }
+            else
+            {
                 cout << "====================================" << endl;
+                for (int i = 0; i < total_purchases; i++)
+                {
+                    display_purchase(i);
+                    cout << "====================================" << endl;
+                }
             }
         }
         else if (ch == 'c')
