@@ -38,6 +38,18 @@ void display_product(int i)
     cout << "\tProduct Name: "  << product_storage[i].name  << endl;
     cout << "\tProduct Price: " << product_storage[i].price << endl;
 }
+void list_all_products()
+{
+    cout << "==============================" << endl;
+    cout << "*        Products List       *" << endl;
+    cout << "==============================" << endl;
+    for (int i = 0; i < total_products; i++)
+    {
+        cout << i << ") " << product_storage[i].name
+             << " | Price: " << product_storage[i].price
+             << endl;
+    }
+}
 void display_purchase(int i)
 {
     cout << "\tPurchase ID: "   << purchase_storage[i].id                           << endl;
@@ -244,6 +256,11 @@ void update_product()
                      << " | Price: " << product_storage[i].price
                      << endl;
             }
+    else
+    {
+        while (true)
+        {
+            list_all_products();
             cout << "Enter Product ID: ";
             int id;
             cin >> id;
