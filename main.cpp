@@ -141,7 +141,7 @@ void menu()
     cout << "==============================" << endl;
     cout << "\t1) Manage Data"               << endl;
     cout << "\t2) Search"                    << endl;
-    cout << "\t3) Report"                   << endl;
+    cout << "\t3) Report"                    << endl;
     cout << "\t4) Exit"                      << endl;
 }
 
