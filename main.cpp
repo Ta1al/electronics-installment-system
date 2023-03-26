@@ -6,7 +6,7 @@ using namespace std;
 struct product
 {
     int id;
-    char name[20];
+    string name;
     int price;
 };
 struct purchase
@@ -239,7 +239,7 @@ void add_purchase(int i)
     system("clear");
 }
 
-void update_product()
+void delete_product()
 {
     if (total_products == 0)
     {
@@ -250,12 +250,41 @@ void update_product()
     {
         while (true)
         {
-            for (int i = 0; i < total_products; i++)
+            list_all_products();
+            cout << "Enter Product ID: ";
+            int id;
+            cin >> id;
+            if (id >= total_products || id < 0)
             {
-                cout << i << ") " << product_storage[i].name
-                     << " | Price: " << product_storage[i].price
-                     << endl;
+                system("clear");
+                cout << "Invalid ID!" << endl;
+                cout << "Try Again!" << endl;
             }
+            else
+            {
+                string temp = product_storage[id].name;
+                for (int i = id; i < total_products; i++)
+                {
+                    product_storage[i].id = i;
+                    product_storage[i].name = product_storage[i + 1].name;
+                    product_storage[i].price = product_storage[i + 1].price;
+                }
+                total_products--;
+                system("clear");
+                cout << temp << " Deleted!" << endl;
+                break;
+            }
+        }
+    }
+}
+
+void update_product()
+{
+    if (total_products == 0)
+    {
+        cout << "No Products Available!" << endl;
+        return;
+    }
     else
     {
         while (true)
@@ -323,6 +352,7 @@ void update_purchase()
         }
     }
 }
+
 // Manage Menu
 void add_data()
 {
@@ -382,7 +412,7 @@ void delete_data()
         char ch = get_choice_char('a', 'c', delete_data_options);
         if (ch == 'a')
         {
-            cout << "Product Deleted" << endl;
+            delete_product();
         }
         else if (ch == 'b')
         {
@@ -496,7 +526,7 @@ void manage_data()
         else if (ch == 'b')
             update_data();
         else if (ch == 'c')
-            cout << "TBD" << endl;
+            delete_data();
         else if (ch == 'd')
             display_data();
         else if (ch == 'e')
