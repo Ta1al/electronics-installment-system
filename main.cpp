@@ -182,6 +182,7 @@ void display_data_options()
 void add_product(int i)
 {
     cout << "Product ID: " << i << endl;
+    product_storage[i].id = i;
     cout << "Enter Product Name: ";
     cin >> product_storage[i].name;
     cout << "Enter Product Price: ";
@@ -337,14 +338,14 @@ void add_data()
         add_data_options();
         char ch = get_choice_char('a', 'c', add_data_options);
         if (ch == 'a')
-            {
-                add_product(total_products);
-                cout << "Product Added!" << endl;
-                cout << "====================================" << endl;
-                display_product(total_products);
-                cout << "====================================" << endl;
-                total_products++;
-            }
+        {
+            add_product(total_products);
+            cout << "Product Added!" << endl;
+            cout << "====================================" << endl;
+            display_product(total_products);
+            cout << "====================================" << endl;
+            total_products++;
+        }
         else if (ch == 'b')
             add_purchase();
         else if (ch == 'c')
