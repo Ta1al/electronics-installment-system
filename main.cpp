@@ -164,8 +164,9 @@ void search_data_options()
     cout << "==============================" << endl;
     cout << "\ta) Search by Product ID"      << endl;
     cout << "\tb) Search by Product Name"    << endl;
-    cout << "\tc) Search by Customer Name"   << endl;
-    cout << "\td) Go Back"                   << endl;
+    cout << "\tc) Search by Purchase ID"     << endl;
+    cout << "\td) Search by Customer Name"   << endl;
+    cout << "\te) Go Back"                   << endl;
 }
 
 // Manage Menu Options
@@ -572,6 +573,45 @@ void product_name_search()
         }
     }
 }
+void purchase_id_search()
+{
+    cout << "Enter Purchase ID: ";
+    int id;
+    cin >> id;
+    int low = 0;
+    int high = total_purchases - 1;
+    int mid;
+    while (low <= high)
+    {
+        mid = (low + high) / 2;
+        if (id == purchase_storage[mid].id)
+        {
+            cout << "====================================" << endl;
+            display_purchase(mid);
+            cout << "====================================" << endl;
+            break;
+        }
+        else if (id < purchase_storage[mid].id)
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+}
+void purchase_customer_search()
+{
+    cout << "Enter Customer Name: ";
+    string name;
+    cin >> name;
+    for (int i = 0; i < total_purchases; i++)
+    {
+        if (name == purchase_storage[i].customer_name)
+        {
+            cout << "====================================" << endl;
+            display_purchase(i);
+            cout << "====================================" << endl;
+        }
+    }
+}
 
 // Main Menu
 void manage_data()
@@ -597,14 +637,16 @@ void search_data()
     while (true)
     {
         search_data_options();
-        char ch = get_choice_char('a', 'd', search_data_options);
+        char ch = get_choice_char('a', 'e', search_data_options);
         if (ch == 'a')
             product_id_search();
         else if (ch == 'b')
             product_name_search();
         else if (ch == 'c')
-            cout << "TBD" << endl;
+            purchase_id_search();
         else if (ch == 'd')
+            purchase_customer_search();
+        else if (ch == 'e')
             break;
     }
 }
