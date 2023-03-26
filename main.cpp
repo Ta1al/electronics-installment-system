@@ -360,9 +360,7 @@ void product_id_search()
         if (id == product_storage[mid].id)
         {
             cout << "===================================="              << endl;
-            cout << "\tProduct ID: " << product_storage[mid].id         << endl;
-            cout << "\tProduct Name: " << product_storage[mid].name     << endl;
-            cout << "\tProduct Price: " << product_storage[mid].price   << endl;
+            display_product(mid);
             cout << "===================================="              << endl;
             break;
         }
@@ -382,9 +380,7 @@ void product_name_search()
         if (name == product_storage[i].name)
         {
             cout << "===================================="              << endl;
-            cout << "\tProduct ID: " << product_storage[i].id           << endl;
-            cout << "\tProduct Name: " << product_storage[i].name       << endl;
-            cout << "\tProduct Price: " << product_storage[i].price     << endl;
+            display_product(i);
             cout << "===================================="              << endl;
         }
     }
