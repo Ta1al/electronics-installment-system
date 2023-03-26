@@ -28,6 +28,8 @@ product product_storage[100] = {
     {4, "Washing Machine", 50000}
 };
 purchase purchase_storage[100];
+int product_id = 5;
+int purchase_id = 0;
 int total_products = 5;
 int total_purchases = 0;
 
@@ -278,7 +280,7 @@ void delete_product()
                 string temp = product_storage[id].name;
                 for (int i = id; i < total_products; i++)
                 {
-                    product_storage[i].id = i;
+                    product_storage[i].id = product_storage[i + 1].id;
                     product_storage[i].name = product_storage[i + 1].name;
                     product_storage[i].price = product_storage[i + 1].price;
                 }
@@ -316,7 +318,7 @@ void delete_purchase()
                 string temp = purchase_storage[id].customer_name;
                 for (int i = id; i < total_purchases; i++)
                 {
-                    purchase_storage[i].id = i;
+                    purchase_storage[i].id = purchase_storage[i + 1].id;
                     purchase_storage[i].customer_name = purchase_storage[i + 1].customer_name;
                     purchase_storage[i].product_id = purchase_storage[i + 1].product_id;
                     purchase_storage[i].months = purchase_storage[i + 1].months;
@@ -423,6 +425,7 @@ void add_data()
             display_product(total_products);
             cout << "====================================" << endl;
             total_products++;
+            product_id++;
         }
         else if (ch == 'b')
         {
@@ -432,6 +435,7 @@ void add_data()
             display_purchase(total_purchases);
             cout << "====================================" << endl;
             total_purchases++;
+            purchase_id++;
         }
         else if (ch == 'c')
         {
