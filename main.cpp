@@ -179,20 +179,14 @@ void display_data_options()
     cout << "\tc) Go back"                   << endl;
 }
 
-void add_product()
+void add_product(int i)
 {
-    cout << "Product ID: " << total_products << endl;
-    product_storage[total_products].id = total_products;
+    cout << "Product ID: " << i << endl;
     cout << "Enter Product Name: ";
-    cin >> product_storage[total_products].name;
+    cin >> product_storage[i].name;
     cout << "Enter Product Price: ";
-    cin >> product_storage[total_products].price;
+    cin >> product_storage[i].price;
     system("clear");
-    cout << "Product Added!" << endl;
-    cout << "====================================" << endl;
-    display_product(total_products);
-    cout << "====================================" << endl;
-    total_products++;
 }
 void add_purchase()
 {
@@ -266,11 +260,7 @@ void update_product()
             else
             {
                 cout << "You are updating " << product_storage[id].name << endl;
-                cout << "Enter Product Name: ";
-                cin >> product_storage[id].name;
-                cout << "Enter Product Price: ";
-                cin >> product_storage[id].price;
-                system("clear");
+                add_product(id);
                 cout << "Product Updated!" << endl;
                 cout << "====================================" << endl;
                 display_product(id);
@@ -347,7 +337,14 @@ void add_data()
         add_data_options();
         char ch = get_choice_char('a', 'c', add_data_options);
         if (ch == 'a')
-            add_product();
+            {
+                add_product(total_products);
+                cout << "Product Added!" << endl;
+                cout << "====================================" << endl;
+                display_product(total_products);
+                cout << "====================================" << endl;
+                total_products++;
+            }
         else if (ch == 'b')
             add_purchase();
         else if (ch == 'c')
