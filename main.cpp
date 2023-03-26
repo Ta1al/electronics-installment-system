@@ -400,7 +400,7 @@ void manage_data()
         if (ch == 'a')
             add_data();
         else if (ch == 'b')
-            cout << "TBD" << endl;
+            update_data();
         else if (ch == 'c')
             cout << "TBD" << endl;
         else if (ch == 'd')
