@@ -280,7 +280,65 @@ void update_product()
         }
     }
 }
-
+void update_purchase()
+{
+    if (total_purchases == 0)
+    {
+        cout << "No Purchases Available!" << endl;
+        return;
+    }
+    else
+    {
+        while (true)
+        {
+            for (int i = 0; i < total_purchases; i++)
+            {
+                cout << i << ") " << purchase_storage[i].customer_name
+                     << " | Product: " << product_storage[purchase_storage[i].product_id].name
+                     << endl;
+            }
+            cout << "Enter Purchase ID: ";
+            int id;
+            cin >> id;
+            if (id >= total_purchases || id < 0)
+            {
+                system("clear");
+                cout << "Invalid ID!" << endl;
+                cout << "Try Again!" << endl;
+            }
+            else
+            {
+                cout << "You are updating " << purchase_storage[id].customer_name << endl;
+                cout << "Enter Customer Name: ";
+                cin >> purchase_storage[id].customer_name;
+                for (int i = 0; i < total_products; i++)
+                {
+                    cout << i << ") " << product_storage[i].name
+                         << " | Price: " << product_storage[i].price
+                         << endl;
+                }
+                cout << "Enter Product ID: ";
+                cin >> purchase_storage[id].product_id;
+                cout << "Enter installment months: ";
+                cin >> purchase_storage[id].months;
+                purchase purch = purchase_storage[id];
+                product prod = product_storage[purch.product_id];
+                float initial_pm = prod.price / purch.months;
+                float markup = initial_pm * 0.2;
+                float final_pm = initial_pm + markup;
+                purchase_storage[id].installment_per_month = final_pm;
+                purchase_storage[id].final_price = final_pm * purch.months;
+                purchase_storage[id].initial_price = prod.price;
+                system("clear");
+                cout << "Purchase Updated!" << endl;
+                cout << "====================================" << endl;
+                display_purchase(id);
+                cout << "====================================" << endl;
+                break;
+            }
+        }
+    }
+}
 // Manage Menu
 void add_data()
 {
@@ -309,7 +367,7 @@ void update_data()
             update_product();
         else if (ch == 'b')
         {
-            cout << "User Updated" << endl;
+            update_purchase();
         }
         else if (ch == 'c')
         {
