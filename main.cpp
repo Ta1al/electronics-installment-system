@@ -237,6 +237,50 @@ void add_purchase()
     total_purchases++;
 }
 
+void update_product()
+{
+    if (total_products == 0)
+    {
+        cout << "No Products Available!" << endl;
+        return;
+    }
+    else
+    {
+        while (true)
+        {
+            for (int i = 0; i < total_products; i++)
+            {
+                cout << i << ") " << product_storage[i].name
+                     << " | Price: " << product_storage[i].price
+                     << endl;
+            }
+            cout << "Enter Product ID: ";
+            int id;
+            cin >> id;
+            if (id >= total_products || id < 0)
+            {
+                system("clear");
+                cout << "Invalid ID!" << endl;
+                cout << "Try Again!" << endl;
+            }
+            else
+            {
+                cout << "You are updating " << product_storage[id].name << endl;
+                cout << "Enter Product Name: ";
+                cin >> product_storage[id].name;
+                cout << "Enter Product Price: ";
+                cin >> product_storage[id].price;
+                system("clear");
+                cout << "Product Updated!" << endl;
+                cout << "====================================" << endl;
+                display_product(id);
+                cout << "====================================" << endl;
+                break;
+            }
+        }
+    }
+}
+
 // Manage Menu
 void add_data()
 {
@@ -262,9 +306,7 @@ void update_data()
         update_data_options();
         char ch = get_choice_char('a', 'c', update_data_options);
         if (ch == 'a')
-        {
-            cout << "Product Updated" << endl;
-        }
+            update_product();
         else if (ch == 'b')
         {
             cout << "User Updated" << endl;
@@ -359,9 +401,9 @@ void product_id_search()
         mid = (low + high) / 2;
         if (id == product_storage[mid].id)
         {
-            cout << "===================================="              << endl;
+            cout << "====================================" << endl;
             display_product(mid);
-            cout << "===================================="              << endl;
+            cout << "====================================" << endl;
             break;
         }
         else if (id < product_storage[mid].id)
@@ -379,9 +421,9 @@ void product_name_search()
     {
         if (name == product_storage[i].name)
         {
-            cout << "===================================="              << endl;
+            cout << "====================================" << endl;
             display_product(i);
-            cout << "===================================="              << endl;
+            cout << "====================================" << endl;
         }
     }
 }
