@@ -556,6 +556,7 @@ void reports()
 
 int main()
 {
+    system("clear");
     welcome();
     while (true)
     {
