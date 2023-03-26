@@ -141,7 +141,7 @@ void menu()
     cout << "==============================" << endl;
     cout << "\t1) Manage Data"               << endl;
     cout << "\t2) Search"                    << endl;
-    cout << "\t3) Reports"                   << endl;
+    cout << "\t3) Report"                   << endl;
     cout << "\t4) Exit"                      << endl;
 }
 
@@ -650,9 +650,10 @@ void search_data()
             break;
     }
 }
-void reports()
+void report()
 {
-    cout << "No data yet!" << endl;
+    cout << "Total Products: " << total_products << endl;
+    cout << "Total Purchases: " << total_purchases << endl;
 }
 
 int main()
@@ -668,7 +669,7 @@ int main()
         else if (ch == 2)
             search_data();
         else if (ch == 3)
-            reports();
+            report();
         else if (ch == 4)
         {
             goodbye();
