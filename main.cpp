@@ -189,12 +189,12 @@ void add_product(int i)
     cin >> product_storage[i].price;
     system("clear");
 }
-void add_purchase()
+void add_purchase(int i)
 {
-    cout << "Purchase ID: " << total_purchases << endl;
-    purchase_storage[total_purchases].id = total_purchases;
+    cout << "Purchase ID: " << i << endl;
+    purchase_storage[i].id = i;
     cout << "Enter Customer Name: ";
-    cin >> purchase_storage[total_purchases].customer_name;
+    cin >> purchase_storage[i].customer_name;
 
     if (total_products == 0)
     {
@@ -209,27 +209,22 @@ void add_purchase()
                 << endl;
         }
     cout << "Enter Product ID: ";
-    cin >> purchase_storage[total_purchases].product_id;
-    product prod = product_storage[purchase_storage[total_purchases].product_id];
+    cin >> purchase_storage[i].product_id;
+    product prod = product_storage[purchase_storage[i].product_id];
     cout << "You are purchasing " << prod.name << endl;
     cout << "Initial Price: " << prod.price << endl;
     cout << "Enter installment months: ";
-    cin >> purchase_storage[total_purchases].months;
-    purchase purch = purchase_storage[total_purchases];
+    cin >> purchase_storage[i].months;
+    purchase purch = purchase_storage[i];
     cout << purch.months << endl;
     float initial_pm = prod.price / purch.months;
     float markup = initial_pm * 0.2;
     float final_pm = initial_pm + markup;
-    purchase_storage[total_purchases].installment_per_month = final_pm;
-    purchase_storage[total_purchases].final_price = final_pm * purch.months;
-    purchase_storage[total_purchases].initial_price = prod.price;
+    purchase_storage[i].installment_per_month = final_pm;
+    purchase_storage[i].final_price = final_pm * purch.months;
+    purchase_storage[i].initial_price = prod.price;
 
     system("clear");
-    cout << "Purchase Added!" << endl;
-    cout << "====================================" << endl;
-    display_purchase(total_purchases);
-    cout << "====================================" << endl;
-    total_purchases++;
 }
 
 void update_product()
@@ -300,26 +295,7 @@ void update_purchase()
             else
             {
                 cout << "You are updating " << purchase_storage[id].customer_name << endl;
-                cout << "Enter Customer Name: ";
-                cin >> purchase_storage[id].customer_name;
-                for (int i = 0; i < total_products; i++)
-                {
-                    cout << i << ") " << product_storage[i].name
-                         << " | Price: " << product_storage[i].price
-                         << endl;
-                }
-                cout << "Enter Product ID: ";
-                cin >> purchase_storage[id].product_id;
-                cout << "Enter installment months: ";
-                cin >> purchase_storage[id].months;
-                purchase purch = purchase_storage[id];
-                product prod = product_storage[purch.product_id];
-                float initial_pm = prod.price / purch.months;
-                float markup = initial_pm * 0.2;
-                float final_pm = initial_pm + markup;
-                purchase_storage[id].installment_per_month = final_pm;
-                purchase_storage[id].final_price = final_pm * purch.months;
-                purchase_storage[id].initial_price = prod.price;
+                add_purchase(id);
                 system("clear");
                 cout << "Purchase Updated!" << endl;
                 cout << "====================================" << endl;
@@ -347,7 +323,14 @@ void add_data()
             total_products++;
         }
         else if (ch == 'b')
-            add_purchase();
+        {
+            add_purchase(total_purchases);
+            cout << "Purchase Added!" << endl;
+            cout << "====================================" << endl;
+            display_purchase(total_purchases);
+            cout << "====================================" << endl;
+            total_purchases++;
+        }
         else if (ch == 'c')
         {
             system("clear");
