@@ -84,6 +84,7 @@ int get_choice(int min, int max, function<void()> func)
     while (true)
     {
         a = getch();
+        if(isdigit(a)) a = a - '0';
         if (a > max || a < min)
         {
             system("cls");
@@ -104,7 +105,6 @@ char get_choice_char(char min, char max, function<void()> func)
     while (true)
     {
         a = getch();
-        if(isdigit(a)) a = a - '0';
         if (a > max || a < min)
         {
             system("cls");
