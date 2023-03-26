@@ -60,6 +60,19 @@ void display_purchase(int i)
     cout << "\tIntallment per month: " << purchase_storage[i].installment_per_month << endl;
     cout << "\tMonths: "        << purchase_storage[i].months                       << endl;
 }
+void list_all_purchases()
+{
+    cout << "==============================" << endl;
+    cout << "*        Purchases List      *" << endl;
+    cout << "==============================" << endl;
+    for (int i = 0; i < total_purchases; i++)
+    {
+        cout << i << ") " << purchase_storage[i].customer_name
+             << " | Product ID: " << purchase_storage[i].product_id
+             << " | Final Price: " << purchase_storage[i].final_price
+             << endl;
+    }
+}
 
 // Get Choice Functions
 int get_choice(int min, int max, function<void()> func)
